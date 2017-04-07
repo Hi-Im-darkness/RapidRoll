@@ -45,11 +45,12 @@ class Paddles:
 
 
 class Fences:
-    def __init__(self, canvas, color='black'):
+    def __init__(self, canvas, x=0, y=8, color='black'):
         self.canvas = canvas
         tmp = [0, 8, 5, 0, 10, 8, 15, 0, 20, 8, 25, 0, 30, 8]
         tmp.extend([35, 0, 40, 8, 45, 0, 50, 8])
         self.id = canvas.create_polygon(tmp, fill=color)
+        self.canvas.move(self.id, x, y - 8)
 
 
 class Lifes:

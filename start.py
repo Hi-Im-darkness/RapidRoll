@@ -23,6 +23,18 @@ if __name__ == '__main__':
     canvas.create_text(55, 25, text='x 6', font=('Courier', 15))
     canvas.create_text(250, 25, text='0000000', font=('Courier', 15))
 
-    padd = Paddles(canvas, 200, 150)
-    ball = Balls(canvas, 218, 142)
+    padd = Paddles(canvas, 150, 150)
+    ball = Balls(canvas, 168, 142)
+    listId = [padd.id]
+
+    for y in range(200, 500, 50):
+        num = random.randint(1, 4)
+        x = random.randint(10, 240)
+        if num == 1:
+            fen = Fences(canvas, x, y)
+            listId.append(fen.id)
+        else:
+            pad = Paddles(canvas, x, y)
+            listId.append(pad.id)
+
     inter.mainloop()
