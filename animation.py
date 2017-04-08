@@ -12,7 +12,7 @@ if __name__ == '__main__':
     ball = Balls(canvas, 140, 80)
     while True:
         canvas.update()
-        # ball.dropStraight()
+        ball.dropStraight()
         # canvas.bind_all('<KeyPress-Left>', ball.dropLeft)
         # canvas.bind_all('<Double-KeyPress-Left>', ball.dropLeft)
         # canvas.bind_all('<KeyPress-Right>', ball.dropRight)

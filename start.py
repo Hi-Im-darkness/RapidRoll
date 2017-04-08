@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     life = Lifes(canvas)
     life.move(10, 25)
-    canvas.create_text(55, 25, text='x 6', font=('Courier', 15))
+    canvas.create_text(50, 28, text='x 6', font=('Times', 15))
     canvas.create_text(250, 25, text='0000000', font=('Courier', 15))
 
     padd = Paddles(canvas, 150, 150)
@@ -37,4 +37,15 @@ if __name__ == '__main__':
             pad = Paddles(canvas, x, y)
             listId.append(pad.id)
 
+    while True:
+        canvas.update()
+        # ball.dropStraight()
+        canvas.bind_all('<KeyPress-Left>', ball.dropLeft)
+        # canvas.bind_all('<Double-KeyPress-Left>', ball.dropLeft)
+        canvas.bind_all('<KeyPress-Right>', ball.dropRight)
+        # canvas.bind_all('<Double-KeyPress-Right>', ball.dropRight)
+        # canvas.bind_all('<KeyPress-Left>', ball.moveLeft)
+        # canvas.bind_all('<KeyPress-Right>', ball.moveRight)
+
+        time.sleep(0.01)
     inter.mainloop()

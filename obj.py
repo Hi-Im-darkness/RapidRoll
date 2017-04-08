@@ -8,7 +8,7 @@ class Balls:
         self.canvas.move(self.id, x, y - 15)
 
     def dropStraight(self):
-        self.canvas.move(self.id, 0, 1)
+        self.canvas.move(self.id, 0, 1.5)
 
     def dropRight(self, event):
         for i in range(20):
@@ -31,10 +31,10 @@ class Balls:
         self.canvas.move(self.id, -4, 1.5)
 
     def moveLeft(self, event):
-        self.canvas.move(self.id, -3, 0)
+        self.canvas.move(self.id, -4, 0)
 
     def moveRight(self, event):
-        self.canvas.move(self.id, 3, 0)
+        self.canvas.move(self.id, 4, 0)
 
 
 class Paddles:
