@@ -43,6 +43,16 @@ class Paddles:
         self.id = canvas.create_rectangle(0, 0, 50, 8, fill=color)
         self.canvas.move(self.id, x, y - 8)
 
+    def moveUp(self):
+        self.canvas.move(self.id, 0, -1)
+        self.canvas.update()
+
+    def hitTop(self):
+        pos = self.canvas.coords(self.id)
+        if pos[1] <= 50:
+            return True
+        return False
+
 
 class Fences:
     def __init__(self, canvas, x=0, y=8, color='black'):
@@ -51,6 +61,16 @@ class Fences:
         tmp.extend([35, 0, 40, 8, 45, 0, 50, 8])
         self.id = canvas.create_polygon(tmp, fill=color)
         self.canvas.move(self.id, x, y - 8)
+
+    def moveUp(self):
+        self.canvas.move(self.id, 0, -1)
+        self.canvas.update()
+
+    def hitTop(self):
+        pos = self.canvas.coords(self.id)
+        if pos[3] <= 50:
+            return True
+        return False
 
 
 class Lifes:
