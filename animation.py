@@ -2,6 +2,7 @@ import tkinter as tk
 from obj import *
 import time
 
+
 if __name__ == '__main__':
     inter = tk.Tk()
     inter.title('Rapid Roll')
@@ -10,16 +11,18 @@ if __name__ == '__main__':
     canvas.pack()
 
     ball = Balls(canvas, 140, 80)
+
     while True:
         canvas.update()
-        ball.dropStraight()
-        # canvas.bind_all('<KeyPress-Left>', ball.dropLeft)
-        # canvas.bind_all('<Double-KeyPress-Left>', ball.dropLeft)
-        # canvas.bind_all('<KeyPress-Right>', ball.dropRight)
-        # canvas.bind_all('<Double-KeyPress-Right>', ball.dropRight)
-        canvas.bind_all('<KeyPress-Left>', ball.moveLeft)
-        canvas.bind_all('<KeyPress-Right>', ball.moveRight)
-
+        ball.drop()
+        ball.move()
+        canvas.bind_all('<KeyPress-Left>', ball.keyPressLeft)
+        canvas.bind_all('<KeyPress-Right>', ball.keyPressRight)
+        canvas.bind_all('<KeyRelease>', ball.keyRelease)
         time.sleep(0.01)
+    # canvas.bind_all('<KeyRelease-Left>', ball.moveLeft)
+    # canvas.bind_all('<KeyRelease-Right>', ball.moveRight)
+    # canvas.bind_all('<Double-KeyRelease-Left>', ball.moveLeft)
+    # canvas.bind_all('<Double-KeyRelease-Right>', ball.moveRight)
 
     inter.mainloop()

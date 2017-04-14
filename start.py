@@ -40,9 +40,9 @@ if __name__ == '__main__':
     while True:
         canvas.update()
         # ball.dropStraight()
-        canvas.bind_all('<KeyPress-Left>', ball.dropLeft)
+        # canvas.bind_all('<KeyPress-Left>', ball.dropLeft)
         # canvas.bind_all('<Double-KeyPress-Left>', ball.dropLeft)
-        canvas.bind_all('<KeyPress-Right>', ball.dropRight)
+        # canvas.bind_all('<KeyPress-Right>', ball.dropRight)
         # canvas.bind_all('<Double-KeyPress-Right>', ball.dropRight)
         # canvas.bind_all('<KeyPress-Left>', ball.moveLeft)
         # canvas.bind_all('<KeyPress-Right>', ball.moveRight)
